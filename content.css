@@ -1,0 +1,207 @@
+:root {
+  --iab-bg: #f7f7f2;
+  --iab-panel: #ffffff;
+  --iab-border: #d8d6cb;
+  --iab-text: #1f2328;
+  --iab-muted: #626a73;
+  --iab-accent: #2f7d68;
+  --iab-danger: #b42318;
+  --iab-shadow: 0 12px 32px rgba(18, 24, 31, 0.14);
+}
+
+.iab-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: none;
+  gap: 8px;
+  align-items: center;
+  min-height: 44px;
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--iab-border);
+  background: rgba(247, 247, 242, 0.94);
+  color: var(--iab-text);
+  font: 13px/1.35 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  backdrop-filter: blur(12px);
+}
+
+.iab-topbar[data-visible="true"] {
+  display: flex;
+}
+
+.iab-topbar-label {
+  flex: 0 0 auto;
+  color: var(--iab-muted);
+  font-weight: 650;
+}
+
+.iab-branch-list {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.iab-pill,
+.iab-open-button,
+.iab-icon-button,
+.iab-send-button {
+  border: 1px solid var(--iab-border);
+  background: var(--iab-panel);
+  color: var(--iab-text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.iab-pill {
+  flex: 0 0 auto;
+  max-width: 220px;
+  min-height: 30px;
+  padding: 5px 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iab-pill:hover,
+.iab-open-button:hover,
+.iab-icon-button:hover,
+.iab-send-button:hover {
+  border-color: var(--iab-accent);
+}
+
+.iab-anchor-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px 0;
+}
+
+.iab-open-button {
+  min-height: 30px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--iab-accent);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.iab-panel {
+  box-sizing: border-box;
+  width: min(390px, calc(100vw - 28px));
+  margin: 10px 0 18px auto;
+  border: 1px solid var(--iab-border);
+  border-radius: 8px;
+  background: var(--iab-panel);
+  box-shadow: var(--iab-shadow);
+  color: var(--iab-text);
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (min-width: 1180px) {
+  .iab-panel {
+    float: right;
+    margin: 0 -410px 18px 18px;
+    position: sticky;
+    top: 58px;
+  }
+}
+
+.iab-panel-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
+  padding: 10px 10px 8px;
+  border-bottom: 1px solid var(--iab-border);
+}
+
+.iab-panel-title {
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iab-panel-subtitle {
+  margin: 2px 0 0;
+  color: var(--iab-muted);
+  font-size: 12px;
+}
+
+.iab-panel-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.iab-icon-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.iab-icon-button[data-danger="true"] {
+  color: var(--iab-danger);
+}
+
+.iab-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.iab-message {
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: var(--iab-bg);
+}
+
+.iab-message-role {
+  margin-bottom: 2px;
+  color: var(--iab-muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.iab-message-body {
+  white-space: pre-wrap;
+}
+
+.iab-input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid var(--iab-border);
+}
+
+.iab-input {
+  min-height: 38px;
+  max-height: 110px;
+  resize: vertical;
+  border: 1px solid var(--iab-border);
+  border-radius: 7px;
+  padding: 8px;
+  color: var(--iab-text);
+  font: inherit;
+}
+
+.iab-send-button {
+  min-width: 58px;
+  border-radius: 7px;
+  color: white;
+  background: var(--iab-accent);
+  font-weight: 700;
+}
+
+.iab-empty {
+  color: var(--iab-muted);
+}
